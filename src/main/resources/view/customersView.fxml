@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomersViewController">
+   <children>
+      <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <content>
+            <TableView fx:id="customers" prefHeight="400.0" prefWidth="625.0">
+              <columns>
+                  <TableColumn fx:id="id" minWidth="0.0" prefWidth="0.0" text="id" />
+                <TableColumn fx:id="fName" prefWidth="215.0" text="Имя" />
+                  <TableColumn fx:id="lName" prefWidth="215.0" text="Фамилия" />
+                  <TableColumn fx:id="gender" minWidth="15.0" prefWidth="50.0" text="Пол" />
+                  <TableColumn fx:id="bDay" prefWidth="145.0" text="Дата рождения" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <HBox layoutX="390.0" layoutY="14.0" spacing="5.0">
+         <children>
+            <Button layoutX="390.0" layoutY="14.0" mnemonicParsing="false" onAction="#onHandleEdit" text="Изменить">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="471.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleDelete" text="Удалить">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="540.0" layoutY="14.0" mnemonicParsing="false" onAction="#clearData" text="Очистить БД">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <TextField fx:id="searchField" layoutX="15.0" layoutY="14.0" prefHeight="25.0" prefWidth="363.0" promptText="Введите фамилию или дату (гггг-мм-дд)" />
+   </children>
+</AnchorPane>
