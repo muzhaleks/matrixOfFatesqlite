@@ -1,6 +1,5 @@
 package controllers;
 
-import data.CustomersDB;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -9,8 +8,6 @@ import javafx.stage.Stage;
 import models.Person;
 import run.Main;
 import utils.DateUtil;
-
-import java.sql.SQLException;
 
 
 public class PersonEditDialog {
@@ -24,20 +21,20 @@ public class PersonEditDialog {
     @FXML
     private TextField bDayField;
 
-    private CustomersDB db;
     private Stage dialogStage;
     private Person person;
     private boolean okClicked = false;
 
     @FXML
-    public void initialize(){
+    public void initialize() {
 
     }
 
-    public void setDialogStage(Stage dialogStage){
+    public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
-    public void setPerson(Person person){
+
+    public void setPerson(Person person) {
         this.person = person;
         this.fNameField.setText(person.getFirstName());
         this.lNameField.setText(person.getLastName());
@@ -46,14 +43,16 @@ public class PersonEditDialog {
         bDayField.setPromptText("гггг-мм-дд");
 
     }
-    public boolean isOkClicked(){
+
+    public boolean isOkClicked() {
         return okClicked;
     }
+
     @FXML
-    private void onHandleOk(){
+    private void onHandleOk() {
 
         if (isInputValid())
-        person.setFirstName(fNameField.getText());
+            person.setFirstName(fNameField.getText());
         person.setLastName(lNameField.getText());
         person.setGender(genderField.getText());
         person.setBirthDate(DateUtil.parse(bDayField.getText()));
@@ -64,25 +63,25 @@ public class PersonEditDialog {
 
     private boolean isInputValid() {
         String errMessage = "";
-        if (fNameField.getText() == null || fNameField.getText().length() == 0){
+        if (fNameField.getText() == null || fNameField.getText().length() == 0) {
             errMessage += "Не введено имя\n";
         }
-        if (lNameField.getText() == null || fNameField.getText().length() == 0 ){
+        if (lNameField.getText() == null || fNameField.getText().length() == 0) {
             errMessage += "Не введена фамилия\n";
         }
-        if (genderField.getText() == null || genderField.getText().length() == 0){
+        if (genderField.getText() == null || genderField.getText().length() == 0) {
             errMessage += "Не введен пол\n";
         }
-        if (bDayField.getText() == null || bDayField.getText().length() == 0){
+        if (bDayField.getText() == null || bDayField.getText().length() == 0) {
             errMessage += "Не введена дата рождения\n";
-        }
-        else {
-            if (!DateUtil.validDate(bDayField.getText())){
+        } else {
+            if (!DateUtil.validDate(bDayField.getText())) {
                 errMessage += "Некорректная дата. Используйте формат гггг-мм-дд\n";
             }
-        }if (errMessage.length() == 0){
+        }
+        if (errMessage.length() == 0) {
             return true;
-        }else {
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.initOwner(dialogStage);
             dialogStage = (Stage) alert.getDialogPane().getScene().getWindow();
@@ -97,7 +96,7 @@ public class PersonEditDialog {
     }
 
     @FXML
-    private void onHandleCancel(){
+    private void onHandleCancel() {
         dialogStage.close();
     }
 

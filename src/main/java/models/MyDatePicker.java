@@ -19,7 +19,7 @@ public class MyDatePicker extends Application{
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         DatePicker datePicker = new DatePicker();
         datePicker.setOnAction(event -> {
             day = datePicker.getValue().getDayOfMonth();

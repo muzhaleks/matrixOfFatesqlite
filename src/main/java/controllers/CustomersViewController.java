@@ -11,13 +11,14 @@ import javafx.stage.Stage;
 import data.CustomersDB;
 import models.Person;
 import run.Main;
+
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
 
 
-public class CustomersViewController{
+public class CustomersViewController {
 
     @FXML
     private TableView<Person> customers;
@@ -49,14 +50,14 @@ public class CustomersViewController{
 
     }
 
-    public CustomersViewController() throws ClassNotFoundException,SQLException {
+    public CustomersViewController() throws ClassNotFoundException, SQLException {
         this.db.createDB();
         personList = db.readData();
         filteredList.addAll(personList);
         personList.addListener((ListChangeListener<Person>) c -> updateFilteredData());
     }
 
-    //get customers list from database to table
+    //get customers list from database to table,create filter for search
     @FXML
     public void initialize() {
 
@@ -92,12 +93,8 @@ public class CustomersViewController{
         }
         String lowerCaseFilterString = filterString.toLowerCase();
 
-        if (person.getLastName().toLowerCase().contains(lowerCaseFilterString)) {
-            return true;
-        } else if (person.getBirthDate().toString().contains(lowerCaseFilterString)) {
-            return true;
-        }
-        return false;
+        return person.getLastName().toLowerCase().contains(lowerCaseFilterString) ||
+                person.getBirthDate().toString().contains(lowerCaseFilterString);
     }
 
     private void reapplyTableSortOrder() {
@@ -109,12 +106,12 @@ public class CustomersViewController{
 
     //delete from table & from DB;
     @FXML
-    private void handleDelete()throws ClassNotFoundException,SQLException {
-        db.deletePerson(customers,id);
+    private void handleDelete() throws ClassNotFoundException, SQLException {
+        db.deletePerson(customers, id);
     }
 
     @FXML
-    private void clearData() throws ClassNotFoundException,SQLException{
+    private void clearData() throws ClassNotFoundException, SQLException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         dialogStage = (Stage) alert.getDialogPane().getScene().getWindow();
         dialogStage.getIcons().add(new Image(Main.class.getResourceAsStream("/pics/alert.png")));
@@ -135,11 +132,11 @@ public class CustomersViewController{
     public void onHandleEdit() {
 
         Person selectedPerson = customers.getSelectionModel().getSelectedItem();
-         if (selectedPerson != null) {
-             System.out.println(selectedPerson);
+        if (selectedPerson != null) {
+            System.out.println(selectedPerson);
             boolean okClicked = main.showPersonEditDialog(selectedPerson);
             if (okClicked) {
-               customers.refresh();
+                customers.refresh();
                 Person newPerson = customers.getSelectionModel().getSelectedItem();
                 db.changeData(newPerson);
             }
@@ -155,5 +152,4 @@ public class CustomersViewController{
             alert.showAndWait();
         }
     }
-
 }

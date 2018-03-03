@@ -7,20 +7,14 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import data.CustomersDB;
 import models.MatrixData;
-import models.MyDatePicker;
 import models.Person;
 import run.Main;
-import utils.DateUtil;
 import utils.MatrixCount;
-
-import java.sql.SQLException;
-import java.time.LocalDate;
 
 
 public class MatrixController {
 
 
-    private Stage dialogStage = new Stage();
     @FXML
     DatePicker datePicker;
     @FXML
@@ -284,7 +278,7 @@ public class MatrixController {
 
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            dialogStage = (Stage) alert.getDialogPane().getScene().getWindow();
+            Stage dialogStage = (Stage) alert.getDialogPane().getScene().getWindow();
             dialogStage.getIcons().add(new Image(Main.class.getResourceAsStream("/pics/alert.png")));
             alert.setTitle("Неверный ввод.");
             alert.setHeaderText("Незаполненное поле.");
@@ -297,14 +291,14 @@ public class MatrixController {
     @FXML
     public void onHandleSave() throws ClassNotFoundException {
 
-            CustomersDB customersDB = new CustomersDB();
-            customersDB.writeData(firstNameField.getText(), lastNameField.getText(),
-                    gender.getText(), datePicker.getValue());
-            datePicker.getEditor().clear();
-            datePicker.setValue(null);
-            firstNameField.clear();
-            lastNameField.clear();
-            gender.clear();
+        CustomersDB customersDB = new CustomersDB();
+        customersDB.writeData(firstNameField.getText(), lastNameField.getText(),
+                gender.getText(), datePicker.getValue());
+        datePicker.getEditor().clear();
+        datePicker.setValue(null);
+        firstNameField.clear();
+        lastNameField.clear();
+        gender.clear();
 
     }
 

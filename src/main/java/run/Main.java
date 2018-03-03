@@ -16,10 +16,7 @@ import controllers.MatrixController;
 import controllers.PersonEditDialog;
 import models.Person;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
-
 
 
 public class Main extends Application {
@@ -34,7 +31,6 @@ public class Main extends Application {
         this.primaryStage.setTitle("Матрица Судьбы");
         this.primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("/pics/logo.jpg")));
         initRoot();
-
     }
 
     public void initRoot() {
