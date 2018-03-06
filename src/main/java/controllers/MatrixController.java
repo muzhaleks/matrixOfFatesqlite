@@ -1,6 +1,8 @@
 package controllers;
 
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -21,8 +23,7 @@ public class MatrixController {
     TextField firstNameField;
     @FXML
     TextField lastNameField;
-    @FXML
-    TextField gender;
+
 
     @FXML
     Label zeroYear;
@@ -156,23 +157,29 @@ public class MatrixController {
     @FXML
     Label emoSumConv;
 
+    @FXML
+    ChoiceBox genderChoice;
+    private ObservableList<String> genders = FXCollections.observableArrayList("Муж.", "Жен.");
+
     private Main main;
     private MatrixCount count = new MatrixCount();
 
     public void setMain(Main main) {
         this.main = main;
+    }
 
+    @FXML
+    public void initialize() {
+        genderChoice.setValue("Жен.");
+        genderChoice.setItems(genders);
     }
 
     @FXML
     public void onHandleCount() {
-
         try {
             if (datePicker != null) {
                 Person person = new Person(datePicker.getValue().getDayOfMonth(),
-                        datePicker.getValue().getMonth().getValue(), datePicker.getValue().getYear(),
-                        firstNameField.getText(), lastNameField.getText(), gender.getText());
-
+                        datePicker.getValue().getMonth().getValue(), datePicker.getValue().getYear());
                 MatrixData matrixData = new MatrixData(person);
                 System.out.println(person);
                 System.out.println(matrixData);
@@ -290,16 +297,13 @@ public class MatrixController {
 
     @FXML
     public void onHandleSave() throws ClassNotFoundException {
-
         CustomersDB customersDB = new CustomersDB();
         customersDB.writeData(firstNameField.getText(), lastNameField.getText(),
-                gender.getText(), datePicker.getValue());
+                genderChoice.getSelectionModel().getSelectedItem().toString(), datePicker.getValue());
         datePicker.getEditor().clear();
         datePicker.setValue(null);
         firstNameField.clear();
         lastNameField.clear();
-        gender.clear();
-
     }
 
     //clear matrix fields
@@ -375,7 +379,6 @@ public class MatrixController {
 
         firstNameField.clear();
         lastNameField.clear();
-        gender.clear();
         datePicker.getEditor().clear();
         datePicker.setValue(null);
     }

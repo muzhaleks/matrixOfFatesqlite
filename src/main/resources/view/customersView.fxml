@@ -7,22 +7,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomersViewController">
+<AnchorPane prefHeight="450.0" prefWidth="640.0" styleClass="background" stylesheets="@../pics/MyTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomersViewController">
    <children>
       <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <content>
-            <TableView fx:id="customers" prefHeight="400.0" prefWidth="625.0">
+            <TableView fx:id="customers" prefHeight="400.0" prefWidth="732.0">
               <columns>
                   <TableColumn fx:id="id" minWidth="0.0" prefWidth="0.0" text="id" />
                 <TableColumn fx:id="fName" prefWidth="215.0" text="Имя" />
                   <TableColumn fx:id="lName" prefWidth="215.0" text="Фамилия" />
-                  <TableColumn fx:id="gender" minWidth="15.0" prefWidth="50.0" text="Пол" />
-                  <TableColumn fx:id="bDay" prefWidth="145.0" text="Дата рождения" />
+                  <TableColumn fx:id="gender" minWidth="15.0" prefWidth="85.0" text="Пол" />
+                  <TableColumn fx:id="bDay" prefWidth="209.0" text="Дата рождения" />
               </columns>
             </TableView>
          </content>
       </ScrollPane>
-      <HBox layoutX="390.0" layoutY="14.0" spacing="5.0">
+      <HBox layoutX="414.0" layoutY="15.0" spacing="5.0">
          <children>
             <Button layoutX="390.0" layoutY="14.0" mnemonicParsing="false" onAction="#onHandleEdit" text="Изменить">
                <font>

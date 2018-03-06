@@ -30,6 +30,7 @@ public class Main extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Матрица Судьбы");
         this.primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("/pics/logo.jpg")));
+
         initRoot();
     }
 
@@ -41,7 +42,6 @@ public class Main extends Application {
             root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-
             MatrixController controller = loader.getController();
             controller.setMain(this);
 
@@ -65,7 +65,6 @@ public class Main extends Application {
 
             Scene scene = new Scene(pane);
             dialogStage.setScene(scene);
-
             CustomersViewController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMain(this);
@@ -90,7 +89,6 @@ public class Main extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
-
             PersonEditDialog controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setPerson(person);
