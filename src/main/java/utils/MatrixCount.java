@@ -1,12 +1,6 @@
 package utils;
 
 
-
-
-/**
- * Created by Lelouch on 04.11.2016.
- */
-
 public class MatrixCount {
 
 
