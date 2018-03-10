@@ -4,8 +4,6 @@ package controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -14,9 +12,6 @@ import models.MatrixData;
 import models.Person;
 import run.Main;
 import utils.MatrixCount;
-
-import java.time.format.DateTimeFormatter;
-
 
 public class MatrixController {
 
@@ -189,8 +184,8 @@ public class MatrixController {
                 Person person = new Person(datePicker.getValue().getDayOfMonth(),
                         datePicker.getValue().getMonth().getValue(), datePicker.getValue().getYear());
                 MatrixData matrixData = new MatrixData(person);
-                System.out.println(person);
-                System.out.println(matrixData);
+                /*System.out.println(person);
+                System.out.println(matrixData);*/
 
                 zeroYear.setText(Integer.toString(matrixData.getZeroYear()));
                 tenYear.setText(Integer.toString(matrixData.getTenYear()));
@@ -395,22 +390,6 @@ public class MatrixController {
     public void showDB() {
         main.showDataBase();
 
-    }
-
-    public DatePicker getDatePicker() {
-        return datePicker;
-    }
-
-    public TextField getFirstNameField() {
-        return firstNameField;
-    }
-
-    public TextField getLastNameField() {
-        return lastNameField;
-    }
-
-    public ChoiceBox getGenderChoice() {
-        return genderChoice;
     }
 }
 

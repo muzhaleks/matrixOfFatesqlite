@@ -5,9 +5,6 @@ import utils.MatrixCount;
 
 public class MatrixData {
 
-    //data necessary for calculation
-    private MatrixCount count = new MatrixCount();
-
     private int zeroYear;
     private int twentyYear;
     private int fortyYear;
@@ -65,6 +62,7 @@ public class MatrixData {
 
 
     public MatrixData(Person person) {
+        MatrixCount count = new MatrixCount();
         this.zeroYear = count.counter(person.getBirthDay());
         this.twentyYear = count.counter(person.getBirthMonth());
         this.fortyYear = count.counter(person.getBirthYear());
@@ -121,9 +119,9 @@ public class MatrixData {
         this.planet = count.counter(maleFemaleSum + spirit);
     }
 
-    public MatrixCount getCount() {
+    /*public MatrixCount getCount() {
         return count;
-    }
+    }*/
 
     public int getZeroYear() {
         return zeroYear;
@@ -279,163 +277,6 @@ public class MatrixData {
         return planet;
     }
 
-    public void setCount(MatrixCount count) {
-        this.count = count;
-    }
-
-    public void setZeroYear(int zeroYear) {
-        this.zeroYear = zeroYear;
-    }
-
-    public void setTwentyYear(int twentyYear) {
-        this.twentyYear = twentyYear;
-    }
-
-    public void setFortyYear(int fortyYear) {
-        this.fortyYear = fortyYear;
-    }
-
-    public void setTenYear(int tenYear) {
-        this.tenYear = tenYear;
-    }
-
-    public void setThirtyYear(int thirtyYear) {
-        this.thirtyYear = thirtyYear;
-    }
-
-    public void setFiftyYear(int fiftyYear) {
-        this.fiftyYear = fiftyYear;
-    }
-
-    public void setSixtyYear(int sixtyYear) {
-        this.sixtyYear = sixtyYear;
-    }
-
-    public void setSeventyYear(int seventyYear) {
-        this.seventyYear = seventyYear;
-    }
-
-    public void setComfort(int comfort) {
-        this.comfort = comfort;
-    }
-
-    public void setZeroYearOne(int zeroYearOne) {
-        this.zeroYearOne = zeroYearOne;
-    }
-
-    public void setZeroYearTwo(int zeroYearTwo) {
-        this.zeroYearTwo = zeroYearTwo;
-    }
-
-    public void setZeroYearThree(int zeroYearThree) {
-        this.zeroYearThree = zeroYearThree;
-    }
-
-    public void setTenYearOne(int tenYearOne) {
-        this.tenYearOne = tenYearOne;
-    }
-
-    public void setTenYearTwo(int tenYearTwo) {
-        this.tenYearTwo = tenYearTwo;
-    }
-
-    public void setTwentyYearOne(int twentyYearOne) {
-        this.twentyYearOne = twentyYearOne;
-    }
-
-    public void setTwentyYearTwo(int twentyYearTwo) {
-        this.twentyYearTwo = twentyYearTwo;
-    }
-
-    public void setTwentyYearThree(int twentyYearThree) {
-        this.twentyYearThree = twentyYearThree;
-    }
-
-    public void setThirtyYearOne(int thirtyYearOne) {
-        this.thirtyYearOne = thirtyYearOne;
-    }
-
-    public void setThirtyYearTwo(int thirtyYearTwo) {
-        this.thirtyYearTwo = thirtyYearTwo;
-    }
-
-    public void setFortyYearOne(int fortyYearOne) {
-        this.fortyYearOne = fortyYearOne;
-    }
-
-    public void setFortyYearTwo(int fortyYearTwo) {
-        this.fortyYearTwo = fortyYearTwo;
-    }
-
-    public void setFiftyYearOne(int fiftyYearOne) {
-        this.fiftyYearOne = fiftyYearOne;
-    }
-
-    public void setFiftyYearTwo(int fiftyYearTwo) {
-        this.fiftyYearTwo = fiftyYearTwo;
-    }
-
-
-
-    public void setSixtyYearOne(int sixtyYearOne) {
-        this.sixtyYearOne = sixtyYearOne;
-    }
-
-    public void setSixtyYearTwo(int sixtyYearTwo) {
-        this.sixtyYearTwo = sixtyYearTwo;
-    }
-
-    public void setSeventyYearOne(int seventyYearOne) {
-        this.seventyYearOne = seventyYearOne;
-    }
-
-    public void setSeventyYearTwo(int seventyYearTwo) {
-        this.seventyYearTwo = seventyYearTwo;
-    }
-
-    public void setCenter(int center) {
-        this.center = center;
-    }
-
-    public void setRelations(int relations) {
-        this.relations = relations;
-    }
-
-    public void setCareer(int career) {
-        this.career = career;
-    }
-
-    public void setEarth(int earth) {
-        this.earth = earth;
-    }
-
-    public void setSky(int sky) {
-        this.sky = sky;
-    }
-
-    public void setEarthSkySum(int earthSkySum) {
-        this.earthSkySum = earthSkySum;
-    }
-
-    public void setMale(int male) {
-        this.male = male;
-    }
-
-    public void setFemale(int female) {
-        this.female = female;
-    }
-
-    public void setMaleFemaleSum(int maleFemaleSum) {
-        this.maleFemaleSum = maleFemaleSum;
-    }
-
-    public void setSpirit(int spirit) {
-        this.spirit = spirit;
-    }
-
-    public void setPlanet(int planet) {
-        this.planet = planet;
-    }
 
     @Override
     public String toString() {

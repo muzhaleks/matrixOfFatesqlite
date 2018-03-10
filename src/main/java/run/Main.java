@@ -1,8 +1,6 @@
 package run;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
@@ -15,16 +13,14 @@ import controllers.CustomersViewController;
 import controllers.MatrixController;
 import controllers.PersonEditDialog;
 import models.Person;
-
 import java.io.IOException;
-import java.util.concurrent.Callable;
+
 
 
 public class Main extends Application {
 
     private Stage primaryStage;
-    private ScrollPane root;
-    private ObservableList<Person> personData = FXCollections.observableArrayList();
+
 
     @Override
     public void start(Stage primaryStage) {
@@ -34,11 +30,11 @@ public class Main extends Application {
         initRoot();
     }
 
-    public void initRoot() {
+    private void initRoot() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/view/matrixForOnePerson.fxml"));
-            root = loader.load();
+            ScrollPane root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             MatrixController controller = loader.getController();
@@ -102,10 +98,6 @@ public class Main extends Application {
     }
     public Stage getPrimaryStage() {
         return primaryStage;
-    }
-
-    public ObservableList<Person> getPersonData() {
-        return personData;
     }
 
     public static void main(String[] args) {

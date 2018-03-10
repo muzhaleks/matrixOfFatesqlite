@@ -24,14 +24,12 @@ public class CustomersDB {
     private static final String QUEST = "SELECT * FROM customers";
 
 
-    private Stage dialogStage;
     private ObservableList<Person> persons = FXCollections.observableArrayList();
 
 
-    Connection connection = null;
-    Statement statement = null;
-    PreparedStatement preparedStatement = null;
-    ResultSet resultSet = null;
+    private Connection connection = null;
+    private Statement statement = null;
+    private PreparedStatement preparedStatement = null;
 
     private void getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
@@ -62,7 +60,7 @@ public class CustomersDB {
 
         } catch (SQLException e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            dialogStage = (Stage) alert.getDialogPane().getScene().getWindow();
+            Stage dialogStage = (Stage) alert.getDialogPane().getScene().getWindow();
             dialogStage.getIcons().add(new Image(Main.class.getResourceAsStream("/pics/alert.png")));
             alert.setTitle("Неверный ввод.");
             alert.setHeaderText("Незаполненное поле.");
@@ -76,7 +74,7 @@ public class CustomersDB {
     public ObservableList<Person> readData() {
         try {
             statement = connection.createStatement();
-            resultSet = statement.executeQuery(QUEST);
+            ResultSet resultSet = statement.executeQuery(QUEST);
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String fName = resultSet.getString("fName");
@@ -131,10 +129,6 @@ public class CustomersDB {
         } catch (SQLException   | ClassNotFoundException e) {
           e.printStackTrace();
         }
-    }
-
-    public void closeConn() throws SQLException {
-        connection.close();
     }
 }
 

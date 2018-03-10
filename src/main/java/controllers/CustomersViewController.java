@@ -10,21 +10,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import data.CustomersDB;
 import models.Person;
 import run.Main;
-import utils.DateUtil;
-
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Optional;
-
-import static javafx.fxml.FXMLLoader.*;
 
 
 public class CustomersViewController {
@@ -142,8 +135,7 @@ public class CustomersViewController {
     public void onHandleEdit() {
         Person selectedPerson = customers.getSelectionModel().getSelectedItem();
         if (selectedPerson != null) {
-            //System.out.println(selectedPerson);
-            boolean okClicked = main.showPersonEditDialog(selectedPerson);
+          boolean okClicked = main.showPersonEditDialog(selectedPerson);
             if (okClicked) {
                 customers.refresh();
                 Person newPerson = customers.getSelectionModel().getSelectedItem();
@@ -172,15 +164,18 @@ public class CustomersViewController {
                     FXMLLoader loader = new FXMLLoader();
                     loader.setLocation(Main.class.getResource("/view/matrixForOnePerson.fxml"));
                     Parent root = loader.load();
+
                     main.getPrimaryStage().setScene(new Scene(root));
                     MatrixController controller = loader.getController();
+                    dialogStage.close();
                     controller.firstNameField.setText(tmpPerson.getFirstName());
                     controller.lastNameField.setText(tmpPerson.getLastName());
                     controller.genderChoice.setValue(tmpPerson.getGender());
                     controller.datePicker.setValue(tmpPerson.getBirthDate());
-                    dialogStage.close();
-                    controller.onHandleCount();
+
                     controller.setMain(main);
+                    controller.onHandleCount();
+
                 }catch (Exception e){
                     e.printStackTrace();
                 }
