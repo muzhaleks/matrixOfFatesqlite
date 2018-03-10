@@ -17,6 +17,7 @@ import controllers.PersonEditDialog;
 import models.Person;
 
 import java.io.IOException;
+import java.util.concurrent.Callable;
 
 
 public class Main extends Application {
@@ -30,7 +31,6 @@ public class Main extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Матрица Судьбы");
         this.primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("/pics/logo.jpg")));
-
         initRoot();
     }
 
@@ -38,13 +38,11 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/view/matrixForOnePerson.fxml"));
-
             root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             MatrixController controller = loader.getController();
             controller.setMain(this);
-
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,10 +63,10 @@ public class Main extends Application {
 
             Scene scene = new Scene(pane);
             dialogStage.setScene(scene);
+            dialogStage.setResizable(false);
             CustomersViewController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMain(this);
-
             dialogStage.show();
 
         } catch (Exception e) {
@@ -89,6 +87,7 @@ public class Main extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.setResizable(false);
             PersonEditDialog controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setPerson(person);
@@ -101,7 +100,6 @@ public class Main extends Application {
         }
         return false;
     }
-
     public Stage getPrimaryStage() {
         return primaryStage;
     }

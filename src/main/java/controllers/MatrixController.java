@@ -4,6 +4,8 @@ package controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -12,6 +14,8 @@ import models.MatrixData;
 import models.Person;
 import run.Main;
 import utils.MatrixCount;
+
+import java.time.format.DateTimeFormatter;
 
 
 public class MatrixController {
@@ -175,7 +179,11 @@ public class MatrixController {
     }
 
     @FXML
-    public void onHandleCount() {
+    public void onHandleCount(){
+        countMatrixData();
+    }
+
+    private void countMatrixData() {
         try {
             if (datePicker != null) {
                 Person person = new Person(datePicker.getValue().getDayOfMonth(),
@@ -281,9 +289,9 @@ public class MatrixController {
                 phSumConv.setText(Integer.toString(count.counter(Integer.parseInt(phSum.getText()))));
                 enSumConv.setText(Integer.toString(count.counter(Integer.parseInt(enSum.getText()))));
                 emoSumConv.setText(Integer.toString(count.counter(emoSumDigit)));
-            }
 
-        } catch (Exception e) {
+            }
+        }catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             Stage dialogStage = (Stage) alert.getDialogPane().getScene().getWindow();
             dialogStage.getIcons().add(new Image(Main.class.getResourceAsStream("/pics/alert.png")));
@@ -382,12 +390,27 @@ public class MatrixController {
         datePicker.getEditor().clear();
         datePicker.setValue(null);
     }
-
     //showing table with customers info
     @FXML
     public void showDB() {
         main.showDataBase();
+
     }
 
+    public DatePicker getDatePicker() {
+        return datePicker;
+    }
 
+    public TextField getFirstNameField() {
+        return firstNameField;
+    }
+
+    public TextField getLastNameField() {
+        return lastNameField;
+    }
+
+    public ChoiceBox getGenderChoice() {
+        return genderChoice;
+    }
 }
+

@@ -44,15 +44,15 @@ public class PersonEditDialog {
 
     }
 
+
     public boolean isOkClicked() {
         return okClicked;
     }
 
     @FXML
     private void onHandleOk() {
-
         if (isInputValid())
-            person.setFirstName(fNameField.getText());
+        person.setFirstName(fNameField.getText());
         person.setLastName(lNameField.getText());
         person.setGender(genderField.getText());
         person.setBirthDate(DateUtil.parse(bDayField.getText()));

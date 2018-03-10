@@ -7,11 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="640.0" styleClass="background" stylesheets="@../pics/MyTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomersViewController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="450.0" prefWidth="695.0" styleClass="background" stylesheets="@../pics/MyTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomersViewController">
    <children>
-      <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
          <content>
-            <TableView fx:id="customers" prefHeight="400.0" prefWidth="732.0">
+            <TableView fx:id="customers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#getPersonDataFromTable" prefHeight="450.0" prefWidth="725.0" styleClass="background" stylesheets="@../pics/MyTheme.css">
               <columns>
                   <TableColumn fx:id="id" minWidth="0.0" prefWidth="0.0" text="id" />
                 <TableColumn fx:id="fName" prefWidth="215.0" text="Имя" />
@@ -22,7 +22,7 @@
             </TableView>
          </content>
       </ScrollPane>
-      <HBox layoutX="414.0" layoutY="15.0" spacing="5.0">
+      <HBox layoutX="468.0" layoutY="14.0" spacing="5.0">
          <children>
             <Button layoutX="390.0" layoutY="14.0" mnemonicParsing="false" onAction="#onHandleEdit" text="Изменить">
                <font>
@@ -41,6 +41,6 @@
             </Button>
          </children>
       </HBox>
-      <TextField fx:id="searchField" layoutX="15.0" layoutY="14.0" prefHeight="25.0" prefWidth="363.0" promptText="Введите фамилию или дату (гггг-мм-дд)" />
+      <TextField fx:id="searchField" layoutX="14.0" layoutY="9.0" prefHeight="33.0" prefWidth="411.0" promptText="Введите фамилию или дату (гггг-мм-дд)" />
    </children>
 </AnchorPane>

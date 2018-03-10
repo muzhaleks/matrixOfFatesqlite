@@ -4,18 +4,27 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import data.CustomersDB;
 import models.Person;
 import run.Main;
+import utils.DateUtil;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Optional;
+
+import static javafx.fxml.FXMLLoader.*;
 
 
 public class CustomersViewController {
@@ -40,6 +49,7 @@ public class CustomersViewController {
     private ObservableList<Person> personList;
     private ObservableList<Person> filteredList = FXCollections.observableArrayList();
     private Main main;
+
 
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
@@ -130,10 +140,9 @@ public class CustomersViewController {
 
     @FXML
     public void onHandleEdit() {
-
         Person selectedPerson = customers.getSelectionModel().getSelectedItem();
         if (selectedPerson != null) {
-            System.out.println(selectedPerson);
+            //System.out.println(selectedPerson);
             boolean okClicked = main.showPersonEditDialog(selectedPerson);
             if (okClicked) {
                 customers.refresh();
@@ -151,5 +160,33 @@ public class CustomersViewController {
 
             alert.showAndWait();
         }
+    }
+
+
+    @FXML
+    public void getPersonDataFromTable() {
+        Person tmpPerson = customers.getSelectionModel().getSelectedItem();
+        customers.setOnMouseClicked((event) -> {
+            if (event.getClickCount() == 2 && tmpPerson != null) {
+                try {
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(Main.class.getResource("/view/matrixForOnePerson.fxml"));
+                    Parent root = loader.load();
+                    main.getPrimaryStage().setScene(new Scene(root));
+                    MatrixController controller = loader.getController();
+                    controller.firstNameField.setText(tmpPerson.getFirstName());
+                    controller.lastNameField.setText(tmpPerson.getLastName());
+                    controller.genderChoice.setValue(tmpPerson.getGender());
+                    controller.datePicker.setValue(tmpPerson.getBirthDate());
+                    dialogStage.close();
+                    controller.onHandleCount();
+                    controller.setMain(main);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+
+        });
+
     }
 }
