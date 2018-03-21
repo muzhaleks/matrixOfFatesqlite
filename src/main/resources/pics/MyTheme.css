@@ -1,0 +1,43 @@
+.background{
+-fx-background-image: url("matrixBack.jpg");
+}
+.button{
+-fx-text-fill: black;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#DCDCDC, #D3D3D3);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.button:hover {
+ -fx-background-color: linear-gradient(#40E0D0, #AFEEEE);
+ }
+ .choice-box{
+ -fx-text-fill: black;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#DCDCDC, #D3D3D3);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+ }
+ .choice-box: hover{
+  -fx-background-color: linear-gradient(#40E0D0, #AFEEEE);
+ }
+ .date-picker{
+ -fx-text-fill: black;
+     -fx-font-family: "Arial Narrow";
+     -fx-font-weight: bold;
+ -fx-background-color: linear-gradient(#DCDCDC, #D3D3D3);
+
+ }
+ .date-picker: hover{
+  -fx-background-color: linear-gradient(#40E0D0, #AFEEEE);
+ }
+ .label{
+ -fx-font-size: 18 pt;
+  -fx-font-family: "Arial Narrow";
+     -fx-font-weight: bold;
+ }
+ .text-field{
+ -fx-font-size: 18 pt;
+   -fx-font-family: "Arial Narrow";
+      -fx-font-weight: bold;
+ }
