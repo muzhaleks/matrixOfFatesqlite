@@ -174,14 +174,15 @@ public class MatrixController {
     }
 
     @FXML
-    public void onHandleCount(){
+    public void onHandleCount() {
         countMatrixData();
     }
 
     @FXML
-    public void onHandleDetail(){
-        main.showAnnualDetail(this);
+    public void onHandleDetail() {
+       main.showAnnualDetail(this);
     }
+
 
     private void countMatrixData() {
         try {
@@ -291,7 +292,7 @@ public class MatrixController {
                 emoSumConv.setText(Integer.toString(count.counter(emoSumDigit)));
 
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             Stage dialogStage = (Stage) alert.getDialogPane().getScene().getWindow();
             dialogStage.getIcons().add(new Image(Main.class.getResourceAsStream("/pics/alert.png")));
@@ -390,6 +391,7 @@ public class MatrixController {
         datePicker.getEditor().clear();
         datePicker.setValue(null);
     }
+
     //showing table with customers info
     @FXML
     public void showDB() {
