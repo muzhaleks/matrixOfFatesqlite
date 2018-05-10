@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AnnualDetailController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="800.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" scaleZ="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../pics/AnnualDetail.jpg" />
+         </image>
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+      </ImageView>
+      <Label fx:id="comfortZone" alignment="CENTER" contentDisplay="CENTER" layoutX="360.0" layoutY="373.0" prefHeight="55.0" prefWidth="66.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="zeroYearThree" alignment="CENTER" contentDisplay="CENTER" layoutX="249.0" layoutY="382.0" prefHeight="31.0" prefWidth="42.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="zeroYearTwo" alignment="CENTER" contentDisplay="CENTER" layoutX="144.0" layoutY="382.0" prefHeight="31.0" prefWidth="42.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="zeroYearOne" alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" layoutY="382.0" prefHeight="31.0" prefWidth="42.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="zeroYear" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="383.0" prefHeight="40.0" prefWidth="42.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="tenYearTwo" alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" layoutY="230.0" prefHeight="31.0" prefWidth="36.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="tenYearOne" alignment="CENTER" contentDisplay="CENTER" layoutX="177.0" layoutY="193.0" prefHeight="31.0" prefWidth="36.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="tenYear" alignment="CENTER" contentDisplay="CENTER" layoutX="122.0" layoutY="137.0" prefHeight="40.0" prefWidth="49.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="twentyYearThree" alignment="CENTER" contentDisplay="CENTER" layoutX="375.0" layoutY="261.0" prefHeight="31.0" prefWidth="36.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="twentyYearTwo" alignment="CENTER" contentDisplay="CENTER" layoutX="375.0" layoutY="162.0" prefHeight="31.0" prefWidth="36.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="twentyYearOne" alignment="CENTER" contentDisplay="CENTER" layoutX="375.0" layoutY="115.0" prefHeight="31.0" prefWidth="36.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="twentyYear" alignment="CENTER" contentDisplay="CENTER" layoutX="369.0" layoutY="42.0" prefHeight="40.0" prefWidth="49.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirtyYearTwo" alignment="CENTER" contentDisplay="CENTER" layoutX="535.0" layoutY="230.0" prefHeight="31.0" prefWidth="36.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirtyYearOne" alignment="CENTER" contentDisplay="CENTER" layoutX="571.0" layoutY="193.0" prefHeight="31.0" prefWidth="36.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirtyYear" alignment="CENTER" contentDisplay="CENTER" layoutX="617.0" layoutY="137.0" prefHeight="40.0" prefWidth="49.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="fortyYear" alignment="CENTER" contentDisplay="CENTER" layoutX="721.0" layoutY="383.0" prefHeight="40.0" prefWidth="49.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="fiftyYear" alignment="CENTER" contentDisplay="CENTER" layoutX="617.0" layoutY="619.0" prefHeight="40.0" prefWidth="49.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="sixtyYear" alignment="CENTER" contentDisplay="CENTER" layoutX="369.0" layoutY="715.0" prefHeight="40.0" prefWidth="49.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="seventyYear" alignment="CENTER" contentDisplay="CENTER" layoutX="122.0" layoutY="619.0" prefHeight="40.0" prefWidth="49.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="fortyYearOne" alignment="CENTER" contentDisplay="CENTER" layoutX="657.0" layoutY="382.0" prefHeight="31.0" prefWidth="36.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="fortyYearTwo" alignment="CENTER" contentDisplay="CENTER" layoutX="601.0" layoutY="382.0" prefHeight="31.0" prefWidth="42.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="career" alignment="CENTER" contentDisplay="CENTER" layoutX="565.0" layoutY="466.0" prefHeight="31.0" prefWidth="36.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="relations" alignment="CENTER" contentDisplay="CENTER" layoutX="460.0" layoutY="565.0" prefHeight="31.0" prefWidth="42.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="fiftyYearOne" alignment="CENTER" contentDisplay="CENTER" layoutX="568.0" layoutY="572.0" prefHeight="31.0" prefWidth="42.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="fiftyYearTwo" alignment="CENTER" contentDisplay="CENTER" layoutX="532.0" layoutY="534.0" prefHeight="40.0" prefWidth="42.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="center" alignment="CENTER" contentDisplay="CENTER" layoutX="483.0" layoutY="490.0" prefHeight="31.0" prefWidth="49.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="sixtyYearOne" alignment="CENTER" contentDisplay="CENTER" layoutX="373.0" layoutY="652.0" prefHeight="31.0" prefWidth="42.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="sixtyYearTwo" alignment="CENTER" contentDisplay="CENTER" layoutX="372.0" layoutY="595.0" prefHeight="40.0" prefWidth="42.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="seventyYearOne" alignment="CENTER" contentDisplay="CENTER" layoutX="174.0" layoutY="572.0" prefHeight="31.0" prefWidth="42.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="seventyYearTwo" alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="539.0" prefHeight="31.0" prefWidth="42.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="a1" alignment="CENTER" layoutX="195.0" layoutY="142.0" prefHeight="31.0" prefWidth="24.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="a2" alignment="CENTER" layoutX="225.0" layoutY="142.0" prefHeight="31.0" prefWidth="24.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="a3" alignment="CENTER" layoutX="258.0" layoutY="142.0" prefHeight="31.0" prefWidth="24.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="a4" alignment="CENTER" layoutX="282.0" layoutY="142.0" prefHeight="31.0" prefWidth="24.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="a5" alignment="CENTER" layoutX="303.0" layoutY="116.0" prefHeight="31.0" prefWidth="24.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="a6" alignment="CENTER" layoutX="327.0" layoutY="100.0" prefHeight="31.0" prefWidth="24.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="a7" alignment="CENTER" layoutX="348.0" layoutY="82.0" prefHeight="31.0" prefWidth="24.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="b1" alignment="CENTER" layoutX="408.0" layoutY="82.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="b2" alignment="CENTER" layoutX="432.0" layoutY="100.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="b3" alignment="CENTER" layoutX="456.0" layoutY="115.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="b4" alignment="CENTER" layoutX="480.0" layoutY="142.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="b5" alignment="CENTER" layoutX="504.0" layoutY="142.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="b6" alignment="CENTER" layoutX="535.0" layoutY="142.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="b7" alignment="CENTER" layoutX="571.0" layoutY="142.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="c1" alignment="CENTER" layoutX="630.0" layoutY="205.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="c2" alignment="CENTER" layoutX="631.0" layoutY="236.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="c3" alignment="CENTER" layoutX="631.0" layoutY="263.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="c4" alignment="CENTER" layoutX="631.0" layoutY="286.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="c5" alignment="CENTER" layoutX="645.0" layoutY="302.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="c6" alignment="CENTER" layoutX="669.0" layoutY="318.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="c7" alignment="CENTER" layoutX="693.0" layoutY="342.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="d1" alignment="CENTER" layoutX="693.0" layoutY="423.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="d2" alignment="CENTER" layoutX="669.0" layoutY="451.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="d3" alignment="CENTER" layoutX="645.0" layoutY="467.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="d4" alignment="CENTER" layoutX="630.0" layoutY="483.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="d5" alignment="CENTER" layoutX="630.0" layoutY="506.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="d6" alignment="CENTER" layoutX="630.0" layoutY="534.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="d7" alignment="CENTER" layoutX="630.0" layoutY="565.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="e1" alignment="CENTER" layoutX="571.0" layoutY="620.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="e2" alignment="CENTER" layoutX="535.0" layoutY="620.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="e3" alignment="CENTER" layoutX="508.0" layoutY="620.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="e4" alignment="CENTER" layoutX="480.0" layoutY="620.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="e5" alignment="CENTER" layoutX="460.0" layoutY="644.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="e6" alignment="CENTER" layoutX="438.0" layoutY="660.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="e7" alignment="CENTER" layoutX="414.0" layoutY="684.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="g1" alignment="CENTER" layoutX="339.0" layoutY="691.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="g2" alignment="CENTER" layoutX="315.0" layoutY="668.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="g3" alignment="CENTER" layoutX="294.0" layoutY="644.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="g4" alignment="CENTER" layoutX="279.0" layoutY="624.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="g5" alignment="CENTER" layoutX="258.0" layoutY="620.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="g6" alignment="CENTER" layoutX="225.0" layoutY="620.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="g7" alignment="CENTER" layoutX="195.0" layoutY="620.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="h1" alignment="CENTER" layoutX="135.0" layoutY="559.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="h2" alignment="CENTER" layoutX="135.0" layoutY="534.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="h3" alignment="CENTER" layoutX="135.0" layoutY="506.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="h4" alignment="CENTER" layoutX="135.0" layoutY="482.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="h5" alignment="CENTER" layoutX="117.0" layoutY="460.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="h6" alignment="CENTER" layoutX="93.0" layoutY="444.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="h7" alignment="CENTER" layoutX="69.0" layoutY="413.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="j1" alignment="CENTER" layoutX="69.0" layoutY="342.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="j2" alignment="CENTER" layoutX="93.0" layoutY="318.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="j3" alignment="CENTER" layoutX="117.0" layoutY="302.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="j4" alignment="CENTER" layoutX="135.0" layoutY="287.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="j5" alignment="CENTER" layoutX="135.0" layoutY="263.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="j6" alignment="CENTER" layoutX="135.0" layoutY="236.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="j7" alignment="CENTER" layoutX="135.0" layoutY="205.0" prefHeight="31.0" prefWidth="24.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
