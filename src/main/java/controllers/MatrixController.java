@@ -178,6 +178,11 @@ public class MatrixController {
         countMatrixData();
     }
 
+    @FXML
+    public void onHandleDetail(){
+        main.showAnnualDetail(this);
+    }
+
     private void countMatrixData() {
         try {
             if (datePicker != null) {

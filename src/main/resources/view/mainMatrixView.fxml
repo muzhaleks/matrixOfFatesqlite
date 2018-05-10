@@ -15,7 +15,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefViewportHeight="800.0" prefViewportWidth="1285.0" prefWidth="1285.0" styleClass="background" stylesheets="@../pics/MyTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MatrixController">
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308"
+            maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0"
+            prefViewportHeight="800.0" prefViewportWidth="1285.0" prefWidth="1285.0" styleClass="background"
+            stylesheets="@../pics/MyTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.MatrixController">
    <content>
         <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1285.0" styleClass="background" stylesheets="@../pics/MyTheme.css">
             <children>
@@ -47,7 +51,17 @@
                 <Button layoutX="90.0" layoutY="230.0" mnemonicParsing="false" onAction="#showDB" prefHeight="25.0" prefWidth="80.0" stylesheets="@../pics/MyTheme.css" text="Поиск">
                <font>
                   <Font name="System Bold" size="12.0" />
-               </font></Button>
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect></Button>
             <HBox layoutX="45.0" layoutY="194.0" spacing="10.0">
                <children>
                       <Button layoutX="37.0" layoutY="191.0" mnemonicParsing="false" onAction="#onHandleCount" prefHeight="25.0" prefWidth="80.0" stylesheets="@../pics/MyTheme.css" text="Рассчитать">
@@ -464,6 +478,18 @@
                </font>
             </Label>
             <ChoiceBox fx:id="genderChoice" layoutX="109.0" layoutY="83.0" prefHeight="28.0" prefWidth="80.0" />
+            <Button layoutX="63.0" layoutY="265.0" mnemonicParsing="false" onAction="#onHandleDetail" prefHeight="28.0" prefWidth="135.0" text="Годовая детализация">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
             </children>
             <opaqueInsets>
                 <Insets right="5.0" />

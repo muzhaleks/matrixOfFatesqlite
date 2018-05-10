@@ -162,7 +162,7 @@ public class CustomersViewController {
             if (event.getClickCount() == 2 && tmpPerson != null) {
                 try {
                     FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(Main.class.getResource("/view/matrixForOnePerson.fxml"));
+                    loader.setLocation(Main.class.getResource("/view/mainMatrixView.fxml"));
                     Parent root = loader.load();
 
                     main.getPrimaryStage().setScene(new Scene(root));

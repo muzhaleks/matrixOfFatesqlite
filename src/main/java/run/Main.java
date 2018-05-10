@@ -1,5 +1,6 @@
 package run;
 
+import controllers.AnnualDetailController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -33,7 +34,7 @@ public class Main extends Application {
     private void initRoot() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("/view/matrixForOnePerson.fxml"));
+            loader.setLocation(Main.class.getResource("/view/mainMatrixView.fxml"));
             ScrollPane root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
@@ -66,6 +67,31 @@ public class Main extends Application {
             dialogStage.show();
 
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showAnnualDetail(MatrixController controller){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/view/yearDetalisationView.fxml"));
+            AnchorPane pane = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Годовая детализация");
+            dialogStage.getIcons().add(new Image(Main.class.getResourceAsStream("/pics/customer.png")));
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+
+            Scene scene = new Scene(pane);
+            dialogStage.setScene(scene);
+            //dialogStage.setResizable(false);
+            AnnualDetailController detailController = loader.getController();
+            detailController.getDataFromMatrix(controller);
+            detailController.setMain(this);
+            dialogStage.show();
+
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
