@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="matrixOfFatesqlite:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/matrixOfFatesqlite_jar</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/matrixOfFatesqlite</output-path>
     <root id="archive" name="matrixOfFatesqlite_jar.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" />
